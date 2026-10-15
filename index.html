@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraction Citadel Demo</title>
+  <style>
+    :root{--bg:#0b1220;--card:#0f1724;--accent:#22c55e;--muted:#9ca3af}
+    body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#020617 0%, #071024 100%);color:#e6eef8;display:flex;justify-content:center;padding:40px 20px}
+    .container{width:100%;max-width:980px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);border-radius:16px;padding:28px;box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+    .logo-box{width:100%;min-height:180px;background:#081124;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:22px}
+    .logo-box img{max-width:100%;max-height:180px;object-fit:contain;display:block}
+    h1{margin:0 0 8px;font-size:28px}
+    .description{font-size:15px;line-height:1.6;color:#cbd5e1;margin-bottom:20px;white-space:pre-line}
+    .download-btn{display:inline-block;background:var(--accent);color:#062015;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:700}
+    .muted{color:var(--muted);font-size:13px}
+    footer{margin-top:18px;font-size:13px;color:#94a3b8}
+    @media (max-width:640px){.logo-box{min-height:120px}.container{padding:18px}h1{font-size:20px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-box" aria-label="Logo del juego">
+      <!-- Pon tu logo en assets/logo.png -->
+      <img src="assets/logo.png" alt="Logo del juego" onerror="this.style.display='none'" />
+      <div class="muted" id="noLogo" style="display:none">Sin logo — sube <code>assets/logo.png</code></div>
+    </div>
+
+    <h1>Fraction Citadel — Demo</h1>
+
+    <div class="description">
+Explora el demo de Fraction Citadel: defensa táctica, oleadas enemigas y gestión de recursos.
+
+Controles: teclado / ratón.
+Requisitos: moderno navegador web.
+
+Créditos: Tu nombre aquí.
+    </div>
+
+    <a class="download-btn" href="files/FractionCitadelDemo.zip" download>
+      Descargar .zip
+    </a>
+
+    <footer>
+      Si el enlace no funciona, sube el archivo <code>files/FractionCitadelDemo.zip</code> en el repositorio (carpeta <code>files/</code>). La página está servida por GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    // Mostrar aviso si no hay logo cargado
+    window.addEventListener('load', ()=>{
+      const img = document.querySelector('.logo-box img');
+      const noLogo = document.getElementById('noLogo');
+      if(!img || img.complete && (img.naturalWidth===0)){
+        if(img) img.style.display='none';
+        noLogo.style.display='block';
+      }
+    });
+  </script>
+</body>
+</html>
