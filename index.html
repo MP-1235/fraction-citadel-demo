@@ -21,9 +21,8 @@
 <body>
   <div class="container">
     <div class="logo-box" aria-label="Logo del juego">
-      <!-- Pon tu logo en assets/logo.png -->
-      <img src="assets/logo.png" alt="Logo del juego" onerror="this.style.display='none'" />
-      <div class="muted" id="noLogo" style="display:none">Sin logo — sube <code>assets/logo.png</code></div>
+      <img src="logo.png" alt="Logo del juego" onerror="this.style.display='none'" />
+      <div class="muted" id="noLogo" style="display:none">Sin logo — sube <code>logo.png</code></div>
     </div>
 
     <h1>Fraction Citadel — Demo</h1>
@@ -47,7 +46,6 @@ Créditos: Tu nombre aquí.
   </div>
 
   <script>
-    // Mostrar aviso si no hay logo cargado
     window.addEventListener('load', ()=>{
       const img = document.querySelector('.logo-box img');
       const noLogo = document.getElementById('noLogo');
